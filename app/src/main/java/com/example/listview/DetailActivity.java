@@ -29,7 +29,6 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         Team team = (Team) extra;
-
         name.setText(team.getName());
         division.setText(team.getDivision());
         record.setText("Record: " + team.getRecord());

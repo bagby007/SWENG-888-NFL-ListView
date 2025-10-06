@@ -32,19 +32,13 @@ public class TeamListAdapter extends ArrayAdapter<Team> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Team team = getItem(position);
-        ViewHolder vh;
-
-        if (convertView == null) {
-            convertView = inflater.inflate(R.layout.row_item, parent, false);
-            vh = new ViewHolder();
-            vh.root = convertView.findViewById(R.id.rowRoot);
-            vh.imgLogo = convertView.findViewById(R.id.imgLogo);
-            vh.tvName = convertView.findViewById(R.id.tvName);
-            vh.tvDivision = convertView.findViewById(R.id.tvDivision);
-            convertView.setTag(vh);
-        } else {
-            vh = (ViewHolder) convertView.getTag();
-        }
+        ViewHolder vh = new ViewHolder();
+        convertView = inflater.inflate(R.layout.row_item, parent, false);
+        vh.root = convertView.findViewById(R.id.rowRoot);
+        vh.imgLogo = convertView.findViewById(R.id.imgLogo);
+        vh.tvName = convertView.findViewById(R.id.tvName);
+        vh.tvDivision = convertView.findViewById(R.id.tvDivision);
+        convertView.setTag(vh);
 
         if (team != null) {
             vh.tvName.setText(team.getName());

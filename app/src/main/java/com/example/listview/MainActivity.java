@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         teams = new ArrayList<>();
         int football = R.drawable.sports_football_24dp_000000;
 
-        // NFL Teams
+        // NFL Team Data
         teams.add(new Team("Buffalo Bills", "AFC East", "4-0", football));
         teams.add(new Team("New England Patriots", "AFC East", "2-0-2", football));
         teams.add(new Team("Miami Dolphins", "AFC East", "1-0-3", football));
@@ -71,9 +71,10 @@ public class MainActivity extends AppCompatActivity {
         teams.add(new Team("Los Angeles Rams", "NFC West", "3-1", football));
         teams.add(new Team("Arizona Cardinals", "NFC West", "2-2", football));
 
+        // Set adapter for list view
         TeamListAdapter adapter = new TeamListAdapter(this, teams);
         teamListView.setAdapter(adapter);
-
+        // Set click listener for list items
         teamListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id) {
                 Team selected = teams.get(position);
